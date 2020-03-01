@@ -1,0 +1,369 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    <title>
+    </title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="https://static.codehs.com/gulp/c0769f7aae5a2f2e746e24aadcc3df18b7386d71/chs-js-lib/chs.js"></script>
+    
+    
+    <style>
+    canvas {
+        display: inline-block;
+        padding: 0;
+        margin: auto;
+        display: block;
+        width: 575px;
+        height: 690px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        }
+    body {
+        background-image: url('https://image.freepik.com/free-vector/background-with-pink-gradient_23-2147726823.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    pre {
+        border: 1px solid black;
+        display: inline-block;
+        width: 575px;
+        height: 690px;
+    }
+    </style>
+    
+    </head>
+    
+    <body>
+    <p><img src = "http://www.webestools.com/page/images/uploads/web20Title_eossoebWtl1032.png" alt = "WAVES Logo"></p>
+    <br>
+    
+    
+    <canvas
+    width="575"
+    height="690"
+    class="codehs-editor-canvas"></canvas>
+    <!-- <pre id="console"></pre> -->
+    
+    <script>
+    window.onload = function() {
+    
+        /*
+    Starting Screen: https://codehs.com/uploads/7862708179399dae9b02ed4979f3761d
+    Coping: https://codehs.com/uploads/42e455c168650a97ecda28d58a7957d0
+    Stress Manag: "https://codehs.com/uploads/6df08182bd5db692ddea43fb93e76445"
+    */
+    var indexi;
+    var time;
+    // var min = 0;
+    var theSong;
+    var num;
+    var songList = ["https://codehs.com/uploads/21107fe2b6f15d5f2d0569caba99443c", "https://codehs.com/uploads/ffd59928151b993e1e37a7d792ff1137", "https://codehs.com/uploads/30d36293fc1dde3a9390b2723238a567", "https://codehs.com/uploads/f3ce0c5cd3f6164217e559f653dabfd0", "https://codehs.com/uploads/d32ab9aa357f0f75d3ae05ddd9552b86", "https://codehs.com/uploads/fa30be7eb47335796f98b5e4f8704d11", "https://codehs.com/uploads/0de1ed53c93c20b6515c7ee0f374f0c8", "https://codehs.com/uploads/1a26eefc9db1a8ce54526038074a477f", "https://codehs.com/uploads/3d8facbd872b940fdc28f47fac21e4c4", "https://codehs.com/uploads/f5114334be38a6ebb89f1a25a2c552b2", "https://codehs.com/uploads/c69aad34b0e9df703f1d1424593c5c5d", "https://codehs.com/uploads/48a658a1d360507632f9d6e736d0029a", "https://codehs.com/uploads/09ce0ef59d8599a8d216204d20efb315", "https://codehs.com/uploads/acfe3109cd7dbf7a719897069d8d37ac", "https://codehs.com/uploads/82a1afcdce69f874c8862768de156c57", "https://codehs.com/uploads/abc2aa7210b81376f8e2f9cdd72ae133", "https://codehs.com/uploads/49cf46922883e615b67421a23449406f", "https://codehs.com/uploads/c5cb75f439b6b7bf2a5d698e17744a55", "https://codehs.com/uploads/2e5b4f7a4f0d7545e923a14168fb37f8", "https://codehs.com/uploads/1ecee1468b72d221b50d4b54e621e906"];
+    var sec = 0;
+    var screen;
+    var timer;
+    var challenges = ["Compliment a stranger", "Turn a negative thought positve", "Talk about emotions", "Exercise and or eat healthy", "Take a break from technology"];
+    function start()
+    {
+        remove(screen);
+        screen = new WebImage("https://codehs.com/uploads/7862708179399dae9b02ed4979f3761d");
+        screen.setSize((2720/7), 680);
+        screen.setPosition((getWidth() / 2) - (screen.getWidth() / 2), (getHeight() / 2) - (screen.getHeight() / 2));
+        add(screen);
+        mouseClickMethod(buttons);
+    }
+    function buttons(e)
+    {
+        var mouseX = e.getX();
+        var mouseY = e.getY();
+        if(mouseX >= 177 && mouseX <= 457)
+        {
+            if(mouseY >= 183 && mouseY <= 260)
+            {
+                copingScreen();    
+            }
+            if(mouseY >= 330 && mouseY <= 407)
+            {
+                chall();
+            }
+            if(mouseY >= 475 && mouseY <= 552)
+            {
+                window.open('https://hackathobnnnnhikyufuit--timberwolfninja.repl.co','_blank');
+            }
+        }
+    }
+    function copingScreen()
+    {
+        remove(screen);
+        screen = new WebImage("https://codehs.com/uploads/3a962d696bc3a75b2be41813427205cf");
+        screen.setSize((2720/7), 680);
+        screen.setPosition((getWidth() / 2) - (screen.getWidth() / 2), (getHeight() / 2) - (screen.getHeight() / 2));
+        add(screen);
+        mouseClickMethod(copingButton);
+    }
+    
+    function copingButton(e) {
+        var x = e.getX();
+        var y = e.getY();
+        if(x >= 117 && x <= 457) {
+            if(y >= 264 && y <= 340) {
+                screen = new WebImage("https://codehs.com/uploads/6df08182bd5db692ddea43fb93e76445");
+                screen.setSize((2720/7), 680);
+                screen.setPosition((getWidth() / 2) - (screen.getWidth() / 2), (getHeight() / 2) - (screen.getHeight() / 2));
+                add(screen);
+                mouseClickMethod(stressManag);
+            }
+           if(y >= 408 && y <= 484 ) {
+                remove(screen);
+                screen = new WebImage("https://codehs.com/uploads/bc825270a104e4acaa823e99c0cc8194");
+                screen.setSize((2720/7), 680);
+                screen.setPosition((getWidth() / 2) - (screen.getWidth() / 2), (getHeight() / 2) - (screen.getHeight() / 2));
+                add(screen);
+                mouseClickMethod(dist);
+            }    
+        }
+        
+    }
+    
+    function stressManag(e) {
+        var x = e.getX();
+        var y = e.getY();
+        if(x >= 110 && x <= 273)
+        {
+            if(y >= 210 && y <= 300)
+            {
+                meditate();
+            }
+            if(y >= 362 && y <= 452)
+            {
+                window.open('https://www.allrecipes.com', '_blank');
+            }
+        }
+        if(x >= 305 && x <= 465)
+        {
+            if(y >= 210 && y <= 300)
+            {
+                screen = new WebImage("https://codehs.com/uploads/6af6a47b7d1c6fcc11e81ad61181cfa1");
+                screen.setSize((2720/7), 680);
+                screen.setPosition((getWidth() / 2) - (screen.getWidth() / 2), (getHeight() / 2) - (screen.getHeight() / 2));
+                add(screen);
+                mouseClickMethod(timerButtons);
+            }
+            if(y >= 362 && y <= 452)
+            {
+                underWater();
+            }
+        }
+        if(x >= 206 && x <= 369)
+        {
+            if(y >= 511 && y <= 603)
+            {
+                help();
+            }
+        }
+    }
+    function help()
+    {
+        screen = new WebImage("https://codehs.com/uploads/ebb7ade7dab18fcbafc72c9064186aa0");
+        screen.setSize((2720/7), 680);
+        screen.setPosition((getWidth() / 2) - (screen.getWidth() / 2), (getHeight() / 2) - (screen.getHeight() / 2));
+        add(screen);
+        mouseClickMethod(start);
+    }
+    function underWater()
+    {
+        screen = new WebImage("https://codehs.com/uploads/8936759cb64a5c9fa93414882d2ad221");
+        screen.setSize((2720/7), 680);
+        screen.setPosition((getWidth() / 2) - (screen.getWidth() / 2), (getHeight() / 2) - (screen.getHeight() / 2));
+        add(screen);
+        mouseClickMethod(start);
+    }
+    function timerButtons(e) {
+        var x = e.getX();
+        var y = e.getY();
+        if(x >= 106 && x <= 275) { 
+            if(y >= 208 && y <= 300) {
+                var min = 5; 
+            }
+        }
+        if(x >= 303 && x <= 469) {
+            if(y >= 207 && y <= 302) {
+                var min = 10;
+            }
+        }
+        if(x >= 109 && x <= 273) {
+            if(y >= 360 && y <= 455) {
+                var min = 15;
+            }
+        }
+        if(x >= 303 && x <= 468) {
+            if(y >= 360 && y <= 452) {
+                var min = 20;
+            }
+        }
+        if(x >= 109 && x <= 273) {
+            if(y >= 514 && y <= 608) {
+                var min = 25;
+            }
+        }
+        if(x >= 302 && x <= 469) {
+            if(y >= 513 && y <= 609) {
+                var min = 30;
+            }
+        }
+        sec = min * 60;
+        timer = setInterval(time, 1000);
+        mouseClickMethod(timerStop);
+        clear();
+    }
+    function timerStop()
+    {
+        clearInterval(timer);
+        start();
+    }
+    function time() {
+        if(sec <= 0)
+        {
+            clear();
+            txt = new Text("Done", "30pt Arial");
+            txt.setPosition((getWidth() / 2) - (txt.getWidth() / 2), ((getHeight() / 2) + (txt.getHeight() / 2)) - 5);
+            add(txt);
+            clearInterval(timer);
+        }
+        else
+        {
+            sec--;
+            // if(sec % 1 == 0)
+            // {
+                clear();
+                var txt = new Text(sec, "30pt Arial");
+                txt.setPosition((getWidth() / 2) - (txt.getWidth() / 2), ((getHeight() / 2) + (txt.getHeight() / 2)) - 5);
+                add(txt);   
+            // }
+        }
+    }
+    
+    function clear() {
+        remove(screen);
+        screen = new WebImage("https://codehs.com/uploads/722645d0ca853512e60f88a50b29d6e0");
+        screen.setSize((2720/7), 680);
+        screen.setPosition((getWidth() / 2) - (screen.getWidth() / 2), (getHeight() / 2) - (screen.getHeight() / 2));
+        add(screen);
+    }
+    function music()
+    {
+        num = Randomizer.nextInt(0,3);
+        remove(screen);
+        screen = new WebImage("https://codehs.com/uploads/d92c70ef2370a7513960d04dbb9aa42d");
+        screen.setSize((2720/7), 680);
+        screen.setPosition((getWidth() / 2) - (screen.getWidth() / 2), (getHeight() / 2) - (screen.getHeight() / 2));
+        add(screen);
+        num = Randomizer.nextInt(0,19);
+        theSong = new Audio(songList[num]);
+        theSong.play();
+        mouseClickMethod(musicStop);
+    }
+    function musicStop(e)
+    {
+        var mouseX = e.getX();
+        var mouseY = e.getY();
+        println(mouseX + ", " + mouseY);
+        if(mouseX >= 244 && mouseX <= 328)
+        {
+            if(mouseY >= 523 && mouseY <= 603)
+            {
+                theSong.pause();
+                start();
+            }
+        }
+    }
+    var meditates = new Audio("https://codehs.com/uploads/0cd1f24217d38664fd033ed460ead9c4");
+    function meditate()
+    {
+        screen = new WebImage("https://codehs.com/uploads/a30105c17631c8ab287c41a6b1324d7a");
+        screen.setSize((2720/7), 680);
+        screen.setPosition((getWidth() / 2) - (screen.getWidth() / 2), (getHeight() / 2) - (screen.getHeight() / 2));
+        meditates.play();
+        meditates.loop = true;
+        add(screen);    
+        mouseClickMethod(meditateButtons);
+    }
+    
+    function meditateButtons(e)
+    {
+        var mouseX = e.getX();
+        var mouseY = e.getY();
+        if(mouseX >= 105 && mouseX <= 469)
+        {
+            if(mouseY >= 51 && mouseY <= 629)
+            {
+                meditates.pause();
+                remove(screen);
+                start();
+            }
+        }
+    }
+    function dist(e) {
+         var x = e.getX();
+         var y = e.getY();
+         if(x >= 109 && x <= 228)
+         {
+            if(y >= 225 && y <= 319)
+            {
+                window.open('https://www.keepinspiring.me/category/quotes/', '_blank');
+            }
+            if(y >= 372 && y <=  463)
+            {
+                window.open('https://www.huffpost.com/entry/6-natural-tea-remedies-fo_b_10619928', '_blank');
+            }
+         }
+         if(x >= 304 && x <= 465)
+         {
+            if(y >= 225 && y <= 319)
+            {
+                window.open('https://www.openprocessing.org/sketch/850350/embed/', '_blank');
+            }
+            if(y >= 372 && y <=  463)
+            {
+                music();
+            }
+         }
+         if(x >= 206 && x <= 369)
+         {
+            if(y >= 515 && y <= 607)
+            {
+                help();
+            }
+         }
+    }
+    
+    
+    function chall()
+    {
+        remove(screen);
+        screen = new WebImage("https://codehs.com/uploads/4961248462e971995c354f2a95d9e664");
+        screen.setSize((2720/7), 680);
+        screen.setPosition((getWidth() / 2) - (screen.getWidth() / 2), (getHeight() / 2) - (screen.getHeight() / 2));
+        add(screen);
+        var index = Randomizer.nextInt(0, 4);
+        var txt = new Text(challenges[index], "17pt Arial");
+        txt.setColor("#D19C12");
+        txt.setPosition((getWidth() / 2) - (txt.getWidth() / 2), ((getHeight() / 2) + (txt.getHeight() / 2)) + 29
+        );
+        add(txt);
+        mouseClickMethod(start);
+    }
+    
+    
+        if (typeof start === 'function') {
+            start();
+        }
+    };
+    </script>
+    </body>
+    </html>
